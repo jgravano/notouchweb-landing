@@ -249,8 +249,13 @@ img { display: block; max-width: 100%; }
   right: 0;
   height: 100%;
   aspect-ratio: 1236 / 1024;
-  overflow: hidden;
+  overflow: visible;
   pointer-events: none;
+}
+.hero-visual picture {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
 }
 .hero-visual picture,
 .hero-visual img { width: 100%; height: 100%; }
@@ -259,8 +264,12 @@ img { display: block; max-width: 100%; }
   content: "";
   position: absolute;
   z-index: 3;
-  inset: 0;
-  background: linear-gradient(90deg, #17140f 0%, rgba(23,20,15,.98) 7%, rgba(23,20,15,.72) 20%, rgba(23,20,15,.18) 38%, transparent 54%);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: -42vw;
+  width: calc(100% + 42vw);
+  background: linear-gradient(90deg, #17140f 0%, #17140f 23%, rgba(23,20,15,.96) 37%, rgba(23,20,15,.72) 50%, rgba(23,20,15,.22) 65%, transparent 79%);
 }
 .visual-shade {
   position: absolute;
@@ -289,6 +298,7 @@ img { display: block; max-width: 100%; }
   box-shadow: inset 0 0 24px rgba(43,38,28,.13), 0 0 1px rgba(255,255,255,.65);
   pointer-events: auto;
   transform: translateZ(0) rotate(-.08deg);
+  filter: brightness(.93) sepia(.06);
 }
 .browser-chrome {
   height: 16%;
@@ -474,8 +484,8 @@ img { display: block; max-width: 100%; }
   .microcopy { margin-top: 1.45rem; }
   .scroll-cue { display: none; }
 
-  .hero-visual { position: relative; right: auto; top: auto; width: 100%; height: auto; aspect-ratio: 820 / 1024; margin-top: -.25rem; }
-  .hero-visual::before { background: linear-gradient(180deg, #17140f 0%, rgba(23,20,15,.52) 9%, transparent 24%); }
+  .hero-visual { position: relative; right: auto; top: auto; width: 100%; height: auto; aspect-ratio: 820 / 1024; margin-top: -.25rem; overflow: hidden; }
+  .hero-visual::before { left: 0; width: 100%; background: linear-gradient(180deg, #17140f 0%, rgba(23,20,15,.52) 9%, transparent 24%); }
   .monitor-ui { --screen-left: 49.75%; --screen-top: 40.7%; --screen-width: 45.25%; --screen-height: 27.7%; }
   .browser-chrome { font-size: 4px; }
   .brew-step h2 { font-size: clamp(11px, 3.7vw, 19px); }
