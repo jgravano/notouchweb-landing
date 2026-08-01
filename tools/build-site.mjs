@@ -9,7 +9,15 @@ const output = resolve(root, "dist", "site");
 await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 
-for (const fileName of ["index.html", "styles.css", "app.js", "robots.txt", "sitemap.xml"]) {
+for (const fileName of [
+  "index.html",
+  "styles.css",
+  "app.js",
+  "robots.txt",
+  "sitemap.xml",
+  "llms.txt",
+  "f12b85563624d909d3190d6a0b568fed.txt",
+]) {
   await copyFile(resolve(root, fileName), resolve(output, fileName));
 }
 

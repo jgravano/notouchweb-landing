@@ -6,9 +6,11 @@
     <meta name="theme-color" content="#17140f" />
     <meta
       name="description"
-      content="NoTouchWeb lets you navigate, scroll, and interact with the web using natural gestures."
+      content="NoTouchWeb is a browser-based gesture control interface for touch-free web navigation using natural hand movements and local camera processing."
     />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="canonical" href="https://notouchweb.com/" />
+    <link rel="alternate" type="text/plain" href="https://notouchweb.com/llms.txt" title="NoTouchWeb for language models" />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="NoTouchWeb" />
@@ -45,23 +47,89 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "NoTouchWeb",
-        "url": "https://notouchweb.com/",
-        "description": "NoTouchWeb lets you navigate, scroll, and interact with the web using natural gestures.",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Any",
-        "browserRequirements": "A modern browser with camera access",
-        "featureList": [
-          "Touch-free web navigation",
-          "Natural gesture controls",
-          "Local camera processing"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://notouchweb.com/#website",
+            "url": "https://notouchweb.com/",
+            "name": "NoTouchWeb",
+            "description": "A browser-based gesture control interface for touch-free web navigation.",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://notouchweb.com/#webpage",
+            "url": "https://notouchweb.com/",
+            "name": "NoTouchWeb — Control the web without touching it",
+            "description": "Navigate, scroll, and interact with digital content using natural hand gestures.",
+            "isPartOf": { "@id": "https://notouchweb.com/#website" },
+            "about": { "@id": "https://notouchweb.com/#application" },
+            "primaryImageOfPage": "https://notouchweb.com/assets/social-preview.jpg",
+            "dateModified": "2026-08-01",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "WebApplication",
+            "@id": "https://notouchweb.com/#application",
+            "name": "NoTouchWeb",
+            "url": "https://notouchweb.com/",
+            "description": "NoTouchWeb is a browser-based gesture control interface that uses a device camera for touch-free navigation.",
+            "applicationCategory": "UtilitiesApplication",
+            "applicationSubCategory": "Gesture control interface",
+            "operatingSystem": "Any",
+            "browserRequirements": "A modern browser with camera access and user permission",
+            "image": "https://notouchweb.com/assets/social-preview.jpg",
+            "featureList": [
+              "Touch-free web navigation",
+              "Natural hand gesture input",
+              "Local in-browser motion analysis",
+              "No camera recording or upload"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://notouchweb.com/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is NoTouchWeb?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "NoTouchWeb is a browser-based gesture control interface for navigating digital content without touching a mouse, keyboard, or screen."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does the NoTouchWeb demo work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "With camera permission, the current demo analyzes motion locally in the browser and translates a hand wave into the next step of an on-screen guide."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does NoTouchWeb send camera video to a server?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. In the current demo, camera frames are processed locally in the browser and are not uploaded, recorded, or stored."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does NoTouchWeb require special hardware?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No dedicated gesture hardware is required. The current demo uses a camera already connected to the device and a modern web browser."
+                }
+              }
+            ]
+          }
         ]
       }
     </script>
     <link rel="preload" as="image" href="./assets/hero-desktop.webp" media="(min-width: 761px)" />
     <link rel="preload" as="image" href="./assets/hero-mobile.webp" media="(max-width: 760px)" />
-    <link rel="stylesheet" href="./styles.css?v=9" />
+    <link rel="stylesheet" href="./styles.css?v=10" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -182,6 +250,31 @@
         </div>
       </section>
 
+      <section class="product-facts section" id="about" aria-labelledby="about-title">
+        <div class="facts-layout">
+          <div class="facts-heading">
+            <h2 id="about-title">What is NoTouchWeb?</h2>
+          </div>
+          <div class="facts-copy">
+            <p class="facts-lede">
+              NoTouchWeb is a browser-based gesture control interface for navigating digital content
+              without touching a mouse, keyboard, or screen.
+            </p>
+            <p>
+              With camera permission, the current demo analyzes motion on the device and translates a
+              hand wave into the next step of an on-screen guide. The camera feed is not uploaded,
+              recorded, or stored.
+            </p>
+            <dl class="product-definition">
+              <div><dt>Category</dt><dd>Touch-free web navigation</dd></div>
+              <div><dt>Input</dt><dd>Natural hand movement detected by a device camera</dd></div>
+              <div><dt>Processing</dt><dd>Local, in-browser motion analysis</dd></div>
+              <div><dt>Available today</dt><dd>An interactive browser demo</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
       <section class="use-cases section" id="use-cases">
         <div class="section-heading">
           <h2>Stay with what you’re doing.</h2>
@@ -226,6 +319,44 @@
           <p>
             NoTouchWeb is designed to process interaction locally. Your video is never sent to a server.
           </p>
+        </div>
+      </section>
+
+      <section class="faq section" id="faq" aria-labelledby="faq-title">
+        <div class="faq-layout">
+          <div class="faq-heading">
+            <h2 id="faq-title">Questions, answered plainly.</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>What is NoTouchWeb?</summary>
+              <p>
+                NoTouchWeb is a browser-based gesture control interface for navigating digital content
+                without touching a mouse, keyboard, or screen.
+              </p>
+            </details>
+            <details>
+              <summary>How does the demo work?</summary>
+              <p>
+                After you grant camera permission, the demo analyzes motion locally in the browser. A
+                hand wave advances the on-screen coffee guide to its next step.
+              </p>
+            </details>
+            <details>
+              <summary>Does camera video leave my device?</summary>
+              <p>
+                No. In the current demo, camera frames are processed locally and are not uploaded,
+                recorded, or stored.
+              </p>
+            </details>
+            <details>
+              <summary>Do I need special hardware?</summary>
+              <p>
+                No dedicated gesture hardware is required. The demo uses a camera already connected to
+                your device and a modern browser with camera access.
+              </p>
+            </details>
+          </div>
         </div>
       </section>
     </main>

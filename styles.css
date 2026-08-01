@@ -336,6 +336,20 @@ img { display: block; max-width: 100%; }
 .manifesto-copy h2 { font-size: clamp(2.8rem, 4.3vw, 5.2rem); }
 .manifesto-copy > p:last-child { max-width: 680px; margin: 2.3rem 0 0 auto; color: rgba(23,20,15,.64); font-size: clamp(1rem, 1.4vw, 1.25rem); line-height: 1.7; }
 
+.product-facts { background: #f1ede4; color: var(--dark); border-top: 1px solid rgba(23,20,15,.13); }
+.facts-layout,
+.faq-layout { width: min(1280px, 100%); margin: 0 auto; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(3rem, 8vw, 9rem); }
+.facts-heading h2,
+.faq-heading h2 { margin: 0; font-family: var(--serif); font-size: clamp(2.7rem, 4vw, 4.7rem); font-weight: 400; line-height: 1.04; letter-spacing: 0; }
+.facts-copy { max-width: 700px; }
+.facts-copy p { margin: 0; color: rgba(23,20,15,.64); font-size: 1rem; line-height: 1.75; }
+.facts-copy .facts-lede { color: var(--dark); font-family: var(--serif); font-size: clamp(1.65rem, 2.25vw, 2.35rem); line-height: 1.22; }
+.facts-copy .facts-lede + p { margin-top: 1.8rem; }
+.product-definition { margin: 3rem 0 0; border-top: 1px solid rgba(23,20,15,.17); }
+.product-definition > div { display: grid; grid-template-columns: 145px 1fr; gap: 1.5rem; padding: 1.1rem 0; border-bottom: 1px solid rgba(23,20,15,.17); }
+.product-definition dt { color: rgba(23,20,15,.48); font-size: .7rem; text-transform: uppercase; }
+.product-definition dd { margin: 0; font-size: .9rem; line-height: 1.45; }
+
 .use-cases { background: #d9d1c1; color: var(--dark); }
 .section-heading { margin-bottom: 5rem; }
 .section-heading h2 { max-width: 700px; margin-left: auto; font-size: clamp(3rem, 5vw, 5.8rem); }
@@ -357,6 +371,16 @@ img { display: block; max-width: 100%; }
 .privacy-card { display: grid; grid-template-columns: 1fr .8fr; gap: clamp(2rem, 5vw, 6rem); align-items: center; max-width: 1280px; margin: auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 4rem 0; }
 .privacy h2 { font-size: clamp(2.3rem, 3.5vw, 4.1rem); }
 .privacy-card > p { color: var(--ink-soft); line-height: 1.65; }
+
+.faq { background: var(--dark-2); color: var(--ink); border-top: 1px solid rgba(242,238,228,.1); }
+.faq-heading h2 { max-width: 470px; }
+.faq-list { border-top: 1px solid var(--line); }
+.faq-list details { border-bottom: 1px solid var(--line); }
+.faq-list summary { position: relative; padding: 1.55rem 3rem 1.55rem 0; font-family: var(--serif); font-size: clamp(1.35rem, 1.8vw, 1.8rem); line-height: 1.2; cursor: pointer; list-style: none; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: "+"; position: absolute; top: 50%; right: .25rem; transform: translateY(-50%); color: rgba(242,238,228,.54); font-family: var(--sans); font-size: 1.25rem; font-weight: 300; }
+.faq-list details[open] summary::after { content: "−"; }
+.faq-list p { max-width: 650px; margin: -.2rem 0 1.7rem; color: var(--ink-soft); line-height: 1.7; }
 
 .site-footer { min-height: 180px; padding: 3rem clamp(2rem, 7vw, 8rem); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; background: var(--dark); border-top: 1px solid rgba(242,238,228,.1); }
 .site-footer p { margin: 0; color: rgba(242,238,228,.42); font-size: .78rem; }
@@ -456,6 +480,13 @@ img { display: block; max-width: 100%; }
   .section-grid { grid-template-columns: 1fr; gap: 2.2rem; }
   .manifesto-copy h2 { font-size: 2.85rem; }
   .manifesto-copy > p:last-child { margin-left: 0; }
+  .facts-layout,
+  .faq-layout { grid-template-columns: 1fr; gap: 2.6rem; }
+  .facts-heading h2,
+  .faq-heading h2 { font-size: 2.85rem; }
+  .facts-copy .facts-lede { font-size: 1.75rem; }
+  .product-definition { margin-top: 2.3rem; }
+  .product-definition > div { grid-template-columns: 105px 1fr; gap: 1rem; }
   .section-heading { margin-bottom: 2.8rem; }
   .section-heading h2 { margin-top: 0; font-size: 3rem; }
   .case-grid { grid-template-columns: 1fr; }
@@ -464,6 +495,7 @@ img { display: block; max-width: 100%; }
   .demo-section h2 { font-size: 3.35rem; }
   .privacy-card { grid-template-columns: 1fr; gap: 1.5rem; }
   .privacy-card > p { grid-column: auto; margin: 0; }
+  .faq-list summary { padding-block: 1.35rem; padding-right: 2.5rem; }
   .site-footer { grid-template-columns: 1fr; min-height: auto; padding: 3rem 1.35rem; }
   .site-footer p:last-child { justify-self: start; }
 

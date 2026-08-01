@@ -1,0 +1,36 @@
+# NoTouchWeb
+
+> NoTouchWeb is a browser-based gesture control interface for navigating digital content without touching a mouse, keyboard, or screen.
+
+- Canonical website: https://notouchweb.com/
+- Product category: Touch-free web navigation
+- Current availability: Interactive browser demo
+- Input: Natural hand movement detected by a device camera
+- Processing: Local, in-browser motion analysis
+- Language: English
+
+## What it does
+
+NoTouchWeb is designed to map natural hand gestures to simple web actions such as advancing an on-screen guide or presentation. The current public demo uses a hand wave to move through a coffee-brewing guide.
+
+## Privacy
+
+In the current demo, camera frames are analyzed locally in the browser. Video is not uploaded, recorded, or stored. Camera access requires explicit user permission.
+
+## Hardware and browser requirements
+
+No dedicated gesture-control hardware is required. The demo needs a modern browser, HTTPS, and a camera already connected to the device.
+
+## Intended use cases
+
+- Moving through recipes while hands are busy
+- Advancing presentations while maintaining eye contact
+- Exploring touch-free controls for public interfaces
+
+## Primary pages and sections
+
+- [Product overview](https://notouchweb.com/#about)
+- [Use cases](https://notouchweb.com/#use-cases)
+- [Interactive demo](https://notouchweb.com/#demo)
+- [Privacy](https://notouchweb.com/#privacy)
+- [Frequently asked questions](https://notouchweb.com/#faq)
