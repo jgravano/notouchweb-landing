@@ -15,6 +15,7 @@ const mime = {
   ".svg": "image/svg+xml",
   ".ico": "image/x-icon",
 };
+const noCacheExtensions = new Set([".html", ".css", ".js", ".mjs"]);
 
 const server = createServer(async (request, response) => {
   try {
@@ -27,7 +28,7 @@ const server = createServer(async (request, response) => {
     const body = await readFile(file);
     response.writeHead(200, {
       "content-type": mime[extname(file)] || "application/octet-stream",
-      "cache-control": extname(file) === ".html" ? "no-cache" : "public, max-age=3600",
+      "cache-control": noCacheExtensions.has(extname(file)) ? "no-cache" : "public, max-age=3600",
     });
     response.end(body);
   } catch {

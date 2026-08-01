@@ -11,7 +11,7 @@
     <title>NoTouchWeb — A more human way to browse</title>
     <link rel="preload" as="image" href="./assets/hero-desktop.webp" media="(min-width: 761px)" />
     <link rel="preload" as="image" href="./assets/hero-mobile.webp" media="(max-width: 760px)" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=9" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -40,7 +40,6 @@
         </header>
 
         <div class="hero-copy">
-          <p class="eyebrow">A more human way to browse</p>
           <h1 id="hero-title">Control the web<br />without touching it.</h1>
           <p class="hero-lede">
             Navigate, scroll, and interact with natural gestures.<br class="desktop-only" />
@@ -53,7 +52,6 @@
             </button>
             <a class="text-link" href="#how-it-works">Watch how it works</a>
           </div>
-          <p class="microcopy"><span class="privacy-dot"></span>No extra hardware. Runs in your browser.</p>
         </div>
 
         <div class="hero-visual" aria-label="A person preparing coffee while controlling a web page from across the room">
@@ -69,59 +67,62 @@
             <div class="browser-chrome" aria-hidden="true">
               <div class="browser-dots"><i></i><i></i><i></i></div>
               <div class="browser-address">brew.local / v60</div>
-              <div class="gesture-status"><span></span>gesture on</div>
             </div>
             <div class="monitor-content">
               <div class="monitor-brand-row">
                 <span class="monitor-brand">Brew Guide</span>
-                <span class="monitor-method">V60 · 15g / 250g</span>
+                <span class="monitor-method">V60 · 15g coffee · 250g water</span>
               </div>
               <div class="brew-viewport">
-                <div class="brew-track" data-brew-track>
+                <div class="brew-track" data-brew-track style="transform: translateY(-40%)">
                   <article class="brew-step" data-step="0">
-                    <p class="brew-kicker">01 / 04</p>
-                    <h2>Bloom</h2>
-                    <p>Pour slowly to <strong>50g</strong>.</p>
-                    <div class="brew-metric"><span>00:30</span><span>50g</span></div>
+                    <p class="brew-kicker">01 / 05 · Prep</p>
+                    <h2>Warm the dripper</h2>
+                    <p>Rinse the paper filter and heat the server.</p>
+                    <div class="brew-metric"><span>00:00</span><span>ready</span></div>
                   </article>
                   <article class="brew-step" data-step="1">
-                    <p class="brew-kicker">02 / 04</p>
-                    <h2>Second pour</h2>
-                    <p>Continue in gentle circles to <strong>150g</strong>.</p>
-                    <div class="brew-metric"><span>01:12</span><span>150g</span></div>
+                    <p class="brew-kicker">02 / 05 · Bloom</p>
+                    <h2>Bloom</h2>
+                    <p>Pour slowly until the scale reaches <strong>50g</strong>.</p>
+                    <div class="brew-metric"><span>00:30</span><span>50g</span></div>
                   </article>
                   <article class="brew-step" data-step="2">
-                    <p class="brew-kicker">03 / 04</p>
-                    <h2>Final pour</h2>
-                    <p>Finish the brew at <strong>250g</strong>.</p>
-                    <div class="brew-metric"><span>01:55</span><span>250g</span></div>
+                    <p class="brew-kicker">03 / 05 · Second pour</p>
+                    <h2>Second pour</h2>
+                    <p>Pour slowly until the scale reaches <strong>150g</strong>.</p>
+                    <div class="brew-metric"><span>01:12</span><span>150g</span></div>
                   </article>
                   <article class="brew-step" data-step="3">
-                    <p class="brew-kicker">04 / 04</p>
-                    <h2>Let it draw down</h2>
+                    <p class="brew-kicker">04 / 05 · Final pour</p>
+                    <h2>Final pour</h2>
+                    <p>Wait 30 seconds, then pour to <strong>250g</strong>.</p>
+                    <div class="brew-metric"><span>01:55</span><span>250g</span></div>
+                  </article>
+                  <article class="brew-step" data-step="4">
+                    <p class="brew-kicker">05 / 05 · Draw down</p>
+                    <h2>Let it finish</h2>
                     <p>Remove the dripper around <strong>02:45</strong>.</p>
-                    <div class="brew-metric"><span>02:45</span><span>ready</span></div>
+                    <div class="brew-metric"><span>02:45</span><span>done</span></div>
                   </article>
                 </div>
               </div>
               <div class="brew-progress" role="tablist" aria-label="Brew guide steps">
-                <button class="active" type="button" aria-label="Step 1" data-brew-dot="0"></button>
+                <button type="button" aria-label="Step 1" data-brew-dot="0"></button>
                 <button type="button" aria-label="Step 2" data-brew-dot="1"></button>
-                <button type="button" aria-label="Step 3" data-brew-dot="2"></button>
+                <button class="active" type="button" aria-label="Step 3" data-brew-dot="2"></button>
                 <button type="button" aria-label="Step 4" data-brew-dot="3"></button>
+                <button type="button" aria-label="Step 5" data-brew-dot="4"></button>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="scroll-cue" aria-hidden="true"><span></span>Scroll</div>
       </section>
 
       <section class="manifesto section" id="how-it-works">
         <div class="section-grid">
-          <p class="section-index">01 — Why</p>
           <div class="manifesto-copy">
-            <p class="eyebrow dark">Your hands have better things to do</p>
             <h2>The web should fit around your life, not the other way around.</h2>
             <p>
               NoTouchWeb turns your camera into a quiet layer of control. A small gesture moves the page,
@@ -133,7 +134,6 @@
 
       <section class="use-cases section" id="use-cases">
         <div class="section-heading">
-          <p class="section-index">02 — Use cases</p>
           <h2>Stay with what you’re doing.</h2>
         </div>
         <div class="case-grid">
@@ -157,7 +157,6 @@
 
       <section class="demo-section section" id="demo">
         <div class="demo-section-inner">
-          <p class="eyebrow dark">Try it with the camera you already have</p>
           <h2>A tiny gesture.<br />One less interruption.</h2>
           <p>
             The demo uses motion locally in your browser. Nothing is uploaded, recorded, or stored.
@@ -171,9 +170,7 @@
 
       <section class="privacy section" id="privacy">
         <div class="privacy-card">
-          <span class="privacy-mark" aria-hidden="true"></span>
           <div>
-            <p class="eyebrow">Private by default</p>
             <h2>Your camera stays on your device.</h2>
           </div>
           <p>
@@ -193,13 +190,12 @@
       <div class="dialog-shell">
         <button class="dialog-close" type="button" data-close-demo aria-label="Close demo">×</button>
         <div class="dialog-copy">
-          <p class="eyebrow dark">Local camera demo</p>
-          <h2 id="demo-title">Move your hand.<br />Move the page.</h2>
+          <h2 id="demo-title">Move your hand. Move the page.</h2>
           <p>
             Wave across the camera to move through the brew guide. You can also drag, use the arrow keys,
             or tap the controls.
           </p>
-          <div class="camera-status" data-camera-status><span></span>Camera is off</div>
+          <div class="camera-status" data-camera-status>Camera is off</div>
           <button class="button button-dark" type="button" data-start-camera>Enable camera</button>
           <p class="dialog-privacy">Frames are processed locally and discarded immediately.</p>
         </div>
@@ -219,15 +215,15 @@
               <div>brew.local / guide</div>
             </div>
             <div class="demo-brew" data-demo-brew>
-              <p data-demo-kicker>01 / 04 · V60</p>
-              <h3 data-demo-title>Bloom</h3>
-              <p data-demo-copy>Pour slowly to 50g.</p>
-              <div class="demo-metric"><strong data-demo-time>00:30</strong><span data-demo-weight>50g</span></div>
+              <p data-demo-kicker>03 / 05 · V60</p>
+              <h3 data-demo-title>Second pour</h3>
+              <p data-demo-copy>Pour slowly until the scale reaches 150g.</p>
+              <div class="demo-metric"><strong data-demo-time>01:12</strong><span data-demo-weight>150g</span></div>
               <div class="demo-progress"><i data-demo-progress></i></div>
             </div>
             <div class="demo-controls">
               <button type="button" data-demo-prev aria-label="Previous step">←</button>
-              <span data-demo-count>1 / 4</span>
+              <span data-demo-count>3 / 5</span>
               <button type="button" data-demo-next aria-label="Next step">→</button>
             </div>
           </div>
@@ -236,6 +232,6 @@
     </dialog>
 
     <div class="toast" role="status" aria-live="polite" data-toast></div>
-    <script src="./app.js" defer></script>
+    <script src="./app.js?v=5" defer></script>
   </body>
 </html>

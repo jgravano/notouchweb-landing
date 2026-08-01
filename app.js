@@ -1,11 +1,13 @@
 const brewSteps = [
-  { kicker: "01 / 04 · V60", title: "Bloom", copy: "Pour slowly to 50g.", time: "00:30", weight: "50g" },
-  { kicker: "02 / 04 · V60", title: "Second pour", copy: "Continue in gentle circles to 150g.", time: "01:12", weight: "150g" },
-  { kicker: "03 / 04 · V60", title: "Final pour", copy: "Finish the brew at 250g.", time: "01:55", weight: "250g" },
-  { kicker: "04 / 04 · V60", title: "Draw down", copy: "Remove the dripper around 02:45.", time: "02:45", weight: "ready" },
+  { kicker: "01 / 05 · Prep", title: "Warm the dripper", copy: "Rinse the paper filter and heat the server.", time: "00:00", weight: "ready" },
+  { kicker: "02 / 05 · Bloom", title: "Bloom", copy: "Pour slowly until the scale reaches 50g.", time: "00:30", weight: "50g" },
+  { kicker: "03 / 05 · V60", title: "Second pour", copy: "Pour slowly until the scale reaches 150g.", time: "01:12", weight: "150g" },
+  { kicker: "04 / 05 · V60", title: "Final pour", copy: "Wait 30 seconds, then pour to 250g.", time: "01:55", weight: "250g" },
+  { kicker: "05 / 05 · Draw down", title: "Let it finish", copy: "Remove the dripper around 02:45.", time: "02:45", weight: "done" },
 ];
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const HERO_INITIAL_STEP = 2;
 const track = document.querySelector("[data-brew-track]");
 const monitorDots = [...document.querySelectorAll("[data-brew-dot]")];
 let heroStep = 0;
@@ -13,7 +15,7 @@ let heroTimer = null;
 
 function renderHeroStep(index) {
   heroStep = (index + brewSteps.length) % brewSteps.length;
-  if (track) track.style.transform = `translateY(-${heroStep * 25}%)`;
+  if (track) track.style.transform = `translateY(-${heroStep * (100 / brewSteps.length)}%)`;
   monitorDots.forEach((dot, dotIndex) => dot.classList.toggle("active", dotIndex === heroStep));
 }
 
@@ -23,6 +25,11 @@ function startHeroCycle() {
   heroTimer = setInterval(() => renderHeroStep(heroStep + 1), 4600);
 }
 
+function pauseHeroCycle() {
+  clearInterval(heroTimer);
+  heroTimer = null;
+}
+
 monitorDots.forEach((dot) => {
   dot.addEventListener("click", () => {
     renderHeroStep(Number(dot.dataset.brewDot));
@@ -30,7 +37,7 @@ monitorDots.forEach((dot) => {
   });
 });
 
-renderHeroStep(0);
+renderHeroStep(HERO_INITIAL_STEP);
 startHeroCycle();
 
 const header = document.querySelector("[data-header]");
@@ -79,9 +86,10 @@ function showToast(message) {
 
 function openDialog() {
   if (!dialog) return;
+  pauseHeroCycle();
   if (typeof dialog.showModal === "function") dialog.showModal();
   else dialog.setAttribute("open", "");
-  requestAnimationFrame(() => demoStage?.focus());
+  requestAnimationFrame(() => demoStage?.focus({ preventScroll: true }));
 }
 
 function stopCamera() {
@@ -103,6 +111,7 @@ function stopCamera() {
 function closeDialog() {
   stopCamera();
   dialog?.close();
+  startHeroCycle();
 }
 
 document.querySelectorAll("[data-open-demo]").forEach((button) => button.addEventListener("click", openDialog));
@@ -244,7 +253,7 @@ async function startCamera() {
 }
 
 startCameraButton?.addEventListener("click", startCamera);
-renderDemoStep(0);
+renderDemoStep(HERO_INITIAL_STEP);
 
 document.querySelectorAll(".install-button").forEach((button) => {
   button.addEventListener("dblclick", () => showToast("Chrome extension link will live here."));

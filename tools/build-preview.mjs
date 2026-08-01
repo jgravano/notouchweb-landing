@@ -11,8 +11,8 @@ const css = await readFile(resolve(root, "styles.css"), "utf8");
 const js = await readFile(resolve(root, "app.js"), "utf8");
 
 html = html
-  .replace('<link rel="stylesheet" href="./styles.css" />', `<style>${css}</style>`)
-  .replace('<script src="./app.js" defer></script>', `<script>${js}</script>`);
+  .replace(/<link rel="stylesheet" href="\.\/styles\.css(?:\?[^\"]*)?" \/>/, `<style>${css}</style>`)
+  .replace(/<script src="\.\/app\.js(?:\?[^\"]*)?" defer><\/script>/, `<script>${js}</script>`);
 
 for (const fileName of ["hero-desktop.webp", "hero-tablet.webp", "hero-mobile.webp"]) {
   const bytes = await readFile(resolve(root, "assets", fileName));
